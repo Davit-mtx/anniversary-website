@@ -1,79 +1,85 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import Loader from "@/components/Loader"
-import Countdown from "@/components/Countdown"
-import DaysTogether from "@/components/DaysTogether"
-import PhotoGallery from "@/components/PhotoGallery"
-import Message from "@/components/Message"
-import FloatingElements from "@/components/FloatingElements"
-import TapToReveal from "@/components/TapToReveal"
-import MusicPlayer from "@/components/MusicPlayer"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Loader from "@/components/Loader";
+import Countdown from "@/components/Countdown";
+import DaysTogether from "@/components/DaysTogether";
+import PhotoGallery from "@/components/PhotoGallery";
+import Message from "@/components/Message";
+import FloatingElements from "@/components/FloatingElements";
+import TapToReveal from "@/components/TapToReveal";
+import MusicPlayer from "@/components/MusicPlayer";
 
 // Change this to your anniversary date
-const ANNIVERSARY_DATE = "2025-08-02T12:00:00"
+const ANNIVERSARY_DATE = "2026-03-15T12:00:00";
 // Change this to the date you got together
-const TOGETHER_DATE = "2019-08-02T12:00:00"
+const TOGETHER_DATE = "2025-03-15T12:00:00";
 
 export default function Home() {
-  const [loading, setLoading] = useState(true)
-  const [showContent, setShowContent] = useState(false)
-  const [showTapToReveal, setShowTapToReveal] = useState(false)
-  const [playSong, setPlaySong] = useState(false)
+  const [loading, setLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
+  const [showTapToReveal, setShowTapToReveal] = useState(false);
+  const [playSong, setPlaySong] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLoading(false)
-    }, 4000)
+      setLoading(false);
+    }, 4000);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     // Check if the anniversary date has passed
-    const now = new Date()
-    const anniversary = new Date(ANNIVERSARY_DATE)
+    const now = new Date();
+    const anniversary = new Date(ANNIVERSARY_DATE);
     if (now >= anniversary) {
-      setShowContent(true)
-      setShowTapToReveal(true)
+      setShowContent(true);
+      setShowTapToReveal(true);
     }
-  }, [])
+  }, []);
 
   const handleCountdownComplete = () => {
-    setShowContent(true)
-    setShowTapToReveal(true)
-  }
+    setShowContent(true);
+    setShowTapToReveal(true);
+  };
 
   const handleReveal = () => {
-    setShowTapToReveal(false)
-    setShowContent(true)
+    setShowTapToReveal(false);
+    setShowContent(true);
 
     // Start music after a delay
     setTimeout(() => {
-      setPlaySong(true)
-    }, 1000)
-  }
+      setPlaySong(true);
+    }, 1000);
+  };
 
   // Add your photos here
   const photos = [
-    { src: "/image1.jpg", alt: "You + Me = Always 💑⏱️" },
-    { src: "/image2.jpg", alt: "Special moment" },
-    { src: "/image3.jpg", alt: "Just us — in love, in sync 💑💞" } ,
-    { src: "/image4.jpg", alt: "Us together" },
-    { src: "/image5.jpg", alt: "💖Two hearts, one time — holding on to forever 🕰️❤️🤝" },
-    { src: "/image6.jpg", alt: "Happy times" },
-    { src: "/image7.jpg", alt: "📸 The moment she said ‘I love you too’ — forever captured, forever cherished 💖" },
-  ]
+    { src: "/image-1.jpeg", alt: "You + Me = Always 💑⏱️" },
+    { src: "/image-2.jpg", alt: "Special moment" },
+    { src: "/image-3.jpg", alt: "Just us — in love, in sync 💑💞" },
+    { src: "/image-4.jpg", alt: "Us together" },
+    {
+      src: "/image- 5.jpg",
+      alt: "💖Two hearts, one time — holding on to forever 🕰️❤️🤝",
+    },
+    { src: "/image-7.jpg", alt: "Happy times" },
+    {
+      src: "/image-6.jpg",
+      alt: "📸 The moment she said ‘I love you too’ — forever captured, forever cherished 💖",
+    },
+  ];
 
   // Change this message according to you
-  const message = `Dear Love,
+  const message = `Dear EMOY,
 This journey with you has been the most beautiful adventure of my life. Every moment spent with you feels like a blessing, and I cherish each day we've been together.
 From our first meeting to today, you've filled my life with joy, laughter, and unconditional love. Your smile brightens my darkest days, and your love gives me strength when I need it most.
 As we celebrate another year together, I want you to know that my love for you grows stronger with each passing day. You are my best friend, my confidant, and my soulmate.
 Happy Anniversary, my love! Here's to many more years of creating beautiful memories together.
 With all my heart,
-Yash Kewat`
+Mochamad Davit Firmansah`;
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-gradient-to-br from-pink-100 via-purple-50 to-blue-100">
@@ -114,16 +120,25 @@ Yash Kewat`
               }}
               className="text-center mb-12 relative"
             >
-              <div className="absolute -top-16 -left-16 w-32 h-32 text-5xl animate-float">🌸</div>
-              <div className="absolute -bottom-28 -right-14 w-32 h-32 text-5xl animate-float-delay">🌺</div>
+              <div className="absolute -top-16 -left-16 w-32 h-32 text-5xl animate-float">
+                🌸
+              </div>
+              <div className="absolute -bottom-28 -right-14 w-32 h-32 text-5xl animate-float-delay">
+                🌺
+              </div>
 
               <h1 className="text-4xl md:text-5xl py-1.5 font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 mb-4 animate-gradient">
                 Our Anniversary is Coming!
               </h1>
-              <p className="text-xl text-purple-700 font-medium">The countdown to our special day ❤️</p>
+              <p className="text-xl text-purple-700 font-medium">
+                The countdown to our special day ❤️
+              </p>
             </motion.div>
 
-            <Countdown targetDate={ANNIVERSARY_DATE} onComplete={handleCountdownComplete} />
+            <Countdown
+              targetDate={ANNIVERSARY_DATE}
+              onComplete={handleCountdownComplete}
+            />
           </motion.div>
         ) : showTapToReveal ? (
           <TapToReveal key="tap-to-reveal" onReveal={handleReveal} />
@@ -146,7 +161,9 @@ Yash Kewat`
                 }}
                 className="text-center mb-12 relative"
               >
-                <div className="absolute -top-2 -left-5 md:-left-10 text-5xl md:text-6xl animate-float">🎉</div>
+                <div className="absolute -top-2 -left-5 md:-left-10 text-5xl md:text-6xl animate-float">
+                  🎉
+                </div>
                 <div className="absolute -bottom-10 -right-5 md:-bottom-14 md:-right-10 text-5xl md:text-6xl animate-float-delay">
                   🎊
                 </div>
@@ -154,7 +171,9 @@ Yash Kewat`
                 <h1 className="text-4xl md:text-6xl py-1 md:py-2 px-6 font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 mb-3 animate-gradient">
                   Happy Anniversary!
                 </h1>
-                <p className="text-xl text-purple-700 font-medium">Every moment with you is a blessing ❤️</p>
+                <p className="text-xl text-purple-700 font-medium">
+                  Every moment with you is a blessing ❤️
+                </p>
               </motion.div>
 
               <DaysTogether startDate={TOGETHER_DATE} animationDuration={3} />
@@ -169,12 +188,14 @@ Yash Kewat`
                 transition={{ delay: 1.5 }}
                 className="text-center mt-16 mb-8 text-pink-600"
               >
-                <p className="text-lg font-medium">Made with ❤️ by YASH KEWAT</p>
+                <p className="text-lg font-medium">
+                  Made with ❤️ by Mochamad Davit Firmansah
+                </p>
               </motion.footer>
             </motion.div>
           </>
         )}
       </AnimatePresence>
     </main>
-  )
+  );
 }
