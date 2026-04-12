@@ -2,11 +2,14 @@
   "name": "anniversary-site",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://username.github.io/anniversary-/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.3",
@@ -23,13 +26,5 @@
     "eslint-config-next": "15.3.2",
     "gh-pages": "^6.3.0",
     "tailwindcss": "^4"
-  },
-  "name": "my-app",
-  "homepage": "https://username.github.io/my-repo/",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
   }
 }
