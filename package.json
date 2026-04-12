@@ -2,14 +2,14 @@
   "name": "anniversary-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://username.github.io/anniversary-/",
+  "homepage": "https://Davit-mtx.github.io/anniversary-website/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out -t"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.3",
